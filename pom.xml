@@ -12,11 +12,7 @@
     <dagger.version>1.2.2</dagger.version>
     <slf4j.version>1.7.7</slf4j.version>
     <junit.version>4.11</junit.version>
-    <lombok.version>1.16.2</lombok.version>
-    
-    <snapshots>http://maven.research-infrastructures.eu:8081/nexus/content/repositories/gcube-snapshots</snapshots>
-    <releases>http://maven.research-infrastructures.eu:8081/nexus/content/repositories/gcube-externals</releases>
- 
+    <lombok.version>1.16.2</lombok.version>   
   </properties>
   
 
@@ -113,6 +109,11 @@
   <profiles>
 
     <profile>
+    
+     <properties>
+        <snapshots>http://maven.research-infrastructures.eu/nexus/content/repositories/gcube-snapshots</snapshots>
+        <releases>http://maven.research-infrastructures.eu/nexus/content/repositories/gcube-externals</releases>
+      </properties>
 
       <id>gcube-ci</id>
       <activation>
@@ -125,25 +126,26 @@
             <name>gCube Snapshots</name>
             <url>${snapshots}</url>
           </snapshotRepository>
-	        <repository>
-	          <id>gcube-externals</id>
-	          <name>gCube Snapshots</name>
-	          <url>${releases}</url>
-	        </repository>
+           <repository>
+            <id>gcube-externals</id>
+            <name>gCube Externals</name>
+            <url>${releases}</url>
+          </repository>
 	   </distributionManagement>
 
-      <repositories>
+     <repositories>
         <repository>
           <id>gcube-snapshots</id>
           <name>gCube Snapshots</name>
           <url>${snapshots}</url>
+          <snapshots><enabled>true</enabled></snapshots>
         </repository>
         <repository>
           <id>gcube-externals</id>
           <name>gCube Externals</name>
           <url>${releases}</url>
           <releases><enabled>true</enabled></releases>
-        </repository>
+        </repository>        
       </repositories>
       
     </profile>
