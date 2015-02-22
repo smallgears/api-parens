@@ -9,6 +9,11 @@
 			<username>gcube-user</username>
 			<password>${env.SNAPSHOTS_PWD}</password>
 		</server>
+		<server>
+      <id>gcube-snapshots</id>
+      <username>gcube-externals</username>
+      <password>${env.RELEASES_PWD}</password>
+    </server>
 
 	</servers>
 
