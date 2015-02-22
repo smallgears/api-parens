@@ -10,7 +10,7 @@
 			<password>${env.SNAPSHOTS_PWD}</password>
 		</server>
 		<server>
-      <id>gcube-snapshots</id>
+      <id>gcube-externals</id>
       <username>gcube-externals</username>
       <password>${env.RELEASES_PWD}</password>
     </server>
